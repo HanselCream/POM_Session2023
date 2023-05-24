@@ -1,6 +1,7 @@
 package com.qa.opencart.tests;
 
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.dataproviders.ProductDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -20,24 +21,24 @@ public class SearchTest extends BaseTest {
      * This is DataDriven Method
      */
     //2D - Object Array
-    @DataProvider
-    public Object[][] getProductSearchKeyData() {
-        return new Object[][]{
+//    @DataProvider
+//    public Object[][] getProductSearchKeyData() {
+//        return new Object[][]{
+//
+//                {"Macbook"},
+//                {"iMac"},
+//                {"Samsung"}
+//        };
+//    }
 
-                {"Macbook"},
-                {"iMac"},
-                {"Samsung"}
-        };
-    }
 
-
-    @Test(dataProvider = "getProductSearchKeyData")//Mapping the Data
+    @Test(dataProvider = "productDataWithSearchKey", dataProviderClass = ProductDataProviders.class)//Mapping the Data => Before: dataProvider = "getProductSearchKeyData"
     public void searchProductCountTest(String searchKey) {
         resultsPage = accPage.doSearch(searchKey); //searchKey was "Macbook"
         Assert.assertTrue(resultsPage.getProductResultCount() > 0);
     }
 
-    @Test(dataProvider = "getProductSearchKeyData")//Mapping the Data
+    @Test(dataProvider = "productDataWithSearchKey", dataProviderClass = ProductDataProviders.class)//Mapping the Data => Before: "getProductSearchKeyData"
     public void searchPageTitleTest(String searchKey) {
         resultsPage = accPage.doSearch(searchKey); //searchKey was "Macbook"
         String actSearchTitle = resultsPage.getResultPageTitle(searchKey); //searchKey was "Macbook"
@@ -46,18 +47,18 @@ public class SearchTest extends BaseTest {
     }
 
     //
-    @DataProvider
-    public Object[][] getProductTestData() {
-        return new Object[][]{
+//    @DataProvider
+//    public Object[][] getProductTestData() {
+//        return new Object[][]{
+//
+//                {"Macbook", "MacBook Pro"},
+//                {"iMac", "iMac"},
+//                {"Samsung", "Samsung SyncMaster 941BW"},
+//                {"Samsung", "Samsung Galaxy Tab 10.1"},
+//        };
+//    }
 
-                {"Macbook", "MacBook Pro"},
-                {"iMac", "iMac"},
-                {"Samsung", "Samsung SyncMaster 941BW"},
-                {"Samsung", "Samsung Galaxy Tab 10.1"},
-        };
-    }
-
-    @Test(dataProvider = "getProductTestData") //Mapping the Data
+    @Test(dataProvider = "productDataWithName", dataProviderClass = ProductDataProviders.class) //Mapping the Data => Before: dataProvider = "getProductTestData"
     public void selectProductTest(String searchKey, String productName) {
         resultsPage = accPage.doSearch(searchKey); //searchKey was "Macbook"
         productInfoPage = resultsPage.selectProduct(productName); //productName was "Macbook Pro"
@@ -66,19 +67,19 @@ public class SearchTest extends BaseTest {
         Assert.assertEquals(actProductHeaderName, productName); //productName was "Macbook Pro"
     }
 
-    @DataProvider
-    public Object[][] getProductImagesTestData() {
-        return new Object[][]{
+//    @DataProvider
+//    public Object[][] getProductImagesTestData() {
+//        return new Object[][]{
+//
+//                {"Macbook", "MacBook Pro", 4},
+//                {"iMac", "iMac", 3},
+//                {"Samsung", "Samsung SyncMaster 941BW", 1},
+//                {"Samsung", "Samsung Galaxy Tab 10.1", 7},
+//        };
+//    }
 
-                {"Macbook", "MacBook Pro", 4},
-                {"iMac", "iMac", 3},
-                {"Samsung", "Samsung SyncMaster 941BW", 1},
-                {"Samsung", "Samsung Galaxy Tab 10.1", 7},
-        };
-    }
 
-
-    @Test(dataProvider = "getProductImagesTestData")
+    @Test(dataProvider = "productDataWithImage", dataProviderClass = ProductDataProviders.class) //Mapping the Data => Before: dataProvider = "getProductImagesTestData"
     public void productImagesTest(String searchKey, String productName, int expectedImagesCount) {
         resultsPage = accPage.doSearch(searchKey); //searchKey was "Macbook"
         productInfoPage = resultsPage.selectProduct(productName); //productName was "Macbook Pro"

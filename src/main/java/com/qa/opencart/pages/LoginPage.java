@@ -11,14 +11,16 @@ import java.util.List;
 
 public class LoginPage {
 
+    private final WebDriver driver;
     private final ElementUtility eleUtil;
+
     //1. Constructor of the Page Class
     public LoginPage(WebDriver driver) {
         this.driver = driver;
         eleUtil = new ElementUtility(this.driver);
     }
 
-    private final WebDriver driver;
+
     //2 private By locators:
     private final By emailId = By.id("input-email");
     private final By password = By.id("input-password");
@@ -27,6 +29,8 @@ public class LoginPage {
     private final By footersLinks = By.xpath("//footer//a");
     private final By loginErrorMessage = By.cssSelector("div.alert.alert-danger.alert-dismissible");
 
+    //navigateToRegisterPage
+    private final By registerLink = By.linkText("Register"); //To RegistrationPage/Test
 
 
     //3. Page Actions/Methods:
@@ -74,6 +78,11 @@ public class LoginPage {
             return true;
         }
         return false;
+    }
+
+    public RegisterPage navigateToRegisterPage() {
+        eleUtil.doClick(registerLink);
+        return new RegisterPage(driver);
     }
 
 
