@@ -32,7 +32,8 @@
             <artifactId>jquery</artifactId>
             <version>3.6.4</version>
         </dependency>
-
+             
+<!--this is for Word documents (.docx), Excel spreadsheets (.xlsx), PowerPoint presentations (.pptx), and more.---->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
