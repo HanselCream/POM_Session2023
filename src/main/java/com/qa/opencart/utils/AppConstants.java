@@ -27,6 +27,8 @@ public class AppConstants {
     public static final List<String> EXP_ACCOUNTS_HEADER_LIST =
             Arrays.asList("My Account", "My Orders", "My Affiliate Account", "Newsletter");
 
+    public static final String USER_REG_SUCCESS_MSG = "Your Account Has Been Created!";
+
 
 
 }

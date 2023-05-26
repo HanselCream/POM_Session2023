@@ -29,6 +29,9 @@ public class RegisterPage {
     private final By continueButton = By.xpath("//input[@type='submit' and @value='Continue']");
 
     private final By userRegistrationSuccessMessage = By.cssSelector("div#content h1");
+    private final By logoutLink = By.linkText("Logout");
+    private final By registerLink = By.linkText("Register");
+
 
 
     public String registerUser(String firstName, String lastName,
@@ -57,8 +60,11 @@ public class RegisterPage {
         //Message: Your Account Has Been Created!
         String userRegSuccessMessage = eleUtil.waitForElementVisible(userRegistrationSuccessMessage, AppConstants.MEDIUM_DEFAULT_WAIT).getText();
         System.out.println(userRegSuccessMessage);
-        return userRegSuccessMessage;
 
+        eleUtil.doClick(logoutLink);
+        eleUtil.doClick(registerLink);
+
+        return userRegSuccessMessage;
     }
 
     private void doSubscribe(String subscribe) {
