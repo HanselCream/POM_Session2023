@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="OpenCart Regression Suite" verbose= "4" >
+
+    <test name= "Login Page Test">
+        <classes>
+            <class name= "com.qa.opencart.tests.LoginPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Account Page Test">
+        <classes>
+            <class name= "com.qa.opencart.tests.AccountPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Search Test">
+        <classes>
+            <class name="com.qa.opencart.tests.SearchTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Product Info Test">
+        <classes>
+            <class name= "com.qa.opencart.tests.ProductInformationPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+
+</suite> <!-- Suite -->

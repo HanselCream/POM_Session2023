@@ -29,6 +29,14 @@ public class AppConstants {
 
     public static final String USER_REG_SUCCESS_MSG = "Your Account Has Been Created!";
 
+    //EXCEL_UTIL
+    //public static final String TEST_DATA_SHEET_PATH = ".src/main/resources/testdata/OpenCartTestData.xlsx"; //=> ExcelUtil
+
+    //************Sheet Names**************//
+    public static final String REGISTER_SHEET_NAME = "register";
+    public static final String INCORRECT_LOGIN_SHEET_NAME = "incorrectlogin";
+
+
 
 
 }
