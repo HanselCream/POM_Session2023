@@ -32,5 +32,19 @@
         </classes>
     </test> <!-- Test -->
 
+    <test name="Register Page Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.RegisterPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Search Data Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.SearchDataTest"/>
+        </classes>
+    </test> <!-- Test -->
+
 
 </suite> <!-- Suite -->

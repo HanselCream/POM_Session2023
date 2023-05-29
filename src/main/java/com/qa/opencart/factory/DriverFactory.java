@@ -49,6 +49,7 @@ public class DriverFactory {
 
         //POM_9_ParallelTest_CrossBrowserParameters_MultiEnvironmentSetup => 36:00
         //mvn clean install -Denv="qa"
+        //mvn clean install
 
         Properties prop = new Properties();
         FileInputStream ip = null;
@@ -59,7 +60,6 @@ public class DriverFactory {
         try {
         if (envName == null) {
             System.out.println("No Env is given .. hence running it on QA environment .. ");
-
             ip = new FileInputStream("./src/main/resources/config/qa.config.properties");
 
         } else {
