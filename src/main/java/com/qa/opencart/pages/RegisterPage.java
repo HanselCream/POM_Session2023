@@ -29,7 +29,7 @@ public class RegisterPage {
     private final By continueButton = By.xpath("//input[@type='submit' and @value='Continue']");
 
     private final By userRegistrationSuccessMessage = By.cssSelector("div#content h1");
-    private final By logoutLink = By.linkText("Logout");
+    private final By logoutLink = By.xpath("//div[@class='list-group']/a[text()='Logout']");
     private final By registerLink = By.linkText("Register");
 
 
@@ -61,8 +61,8 @@ public class RegisterPage {
         String userRegSuccessMessage = eleUtil.waitForElementVisible(userRegistrationSuccessMessage, AppConstants.MEDIUM_DEFAULT_WAIT).getText();
         System.out.println(userRegSuccessMessage);
 
-        eleUtil.doClick(logoutLink);
-        eleUtil.doClick(registerLink);
+        eleUtil.doClick(logoutLink, 5);
+        eleUtil.doClick(registerLink, 5);
 
         return userRegSuccessMessage;
     }

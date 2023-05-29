@@ -21,7 +21,7 @@ public class AccountsPage {
     }
 
     //2 private By locators:
-    private final By logout = By.linkText("Logout");
+    private final By logout = By.xpath("//div[@class='list-group']/a[text()='Logout']");
     private final By myAccount = By.linkText("My Account");
     private final By accHeaders = By.xpath("//div/h2");
     private final By search = By.name("search");
@@ -34,7 +34,6 @@ public class AccountsPage {
 
     public boolean isLogoutLinkExist() {
         return eleUtil.checkElementIsDisplayed(logout);
-
     }
 
     public boolean isMyAccountLinkExist() {

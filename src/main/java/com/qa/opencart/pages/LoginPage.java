@@ -57,7 +57,7 @@ public class LoginPage {
     }
 
     public AccountsPage doLogin(String userName, String pwd) {
-        System.out.println("Correct Credentials are : " + userName + pwd);
+        System.out.println("Correct Credentials are : " + userName + " : " + pwd);
         eleUtil.waitForElementVisible(emailId, AppConstants.MEDIUM_DEFAULT_WAIT).sendKeys(userName);
         eleUtil.doSendKeys(password, pwd);
         eleUtil.doClick(loginBtn);

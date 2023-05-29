@@ -15,8 +15,8 @@ import java.util.Properties;
 public class DriverFactory {
 
     WebDriver driver;
-    public WebDriver initDriver(Properties prop) {
 
+    public WebDriver initDriver(Properties prop) {
         String browserName = prop.getProperty("browser"); //To call on config properties
 
         System.out.println("Browser Name is : " + browserName);
@@ -46,15 +46,70 @@ public class DriverFactory {
     }
 
     public Properties initProperties() {
+
+        //POM_9_ParallelTest_CrossBrowserParameters_MultiEnvironmentSetup => 36:00
+        //mvn clean install -Denv="qa"
+
         Properties prop = new Properties();
+        FileInputStream ip = null;
+
+        String envName = System.getProperty("env");
+        System.out.println("Running test cases on env: " + envName);
+
         try {
-            FileInputStream ip = new FileInputStream("./src/main/resources/config/config.properties");
+        if (envName == null) {
+            System.out.println("No Env is given .. hence running it on QA environment .. ");
+
+            ip = new FileInputStream("./src/main/resources/config/qa.config.properties");
+
+        } else {
+                switch (envName.toLowerCase().trim()) {
+                    case "qa":
+                        ip = new FileInputStream("./src/main/resources/config/qa.config.properties");
+                        break;
+                    case "dev":
+                        ip = new FileInputStream("./src/main/resources/config/dev.config.properties");
+                        break;
+                    case "stage":
+                        ip = new FileInputStream("./src/main/resources/config/stage.config.properties");
+                        break;
+                    case "uat":
+                        ip = new FileInputStream("./src/main/resources/config/uat.config.properties");
+                        break;
+                    case "prod":
+                        ip = new FileInputStream("./src/main/resources/config/config.properties");
+                        break;
+
+                    default:
+                        System.out.println("Please print the right env name ... " + envName);
+                        throw new FrameException("NOVALIDENVIRONEMENTGIVEN");
+                }
+            }
+        }
+            catch(FileNotFoundException e){
+                e.printStackTrace();
+            }
+        try {
             prop.load(ip);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return prop;
-    }
+        }
 }
+
+        //*******************//
+//        Properties prop = new Properties();
+//        try {
+//            FileInputStream ip = new FileInputStream("./src/main/resources/config/config.properties");
+//            prop.load(ip);
+
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return prop;
+//    }
+//}

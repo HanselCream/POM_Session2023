@@ -5,6 +5,7 @@ import com.qa.opencart.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
 import java.util.Properties;
@@ -22,12 +23,20 @@ public class BaseTest {
 
     protected DriverFactory df;
     protected Properties prop;
+
+    @Parameters({"browser"}) //ADDED POM_9
     @BeforeTest
-    public void setup() {
+    public void setup(String browserName) { //Added "String browserName" POM_9
         //Setup on DriverFactory
         df = new DriverFactory();
         prop = df.initProperties();
+
+        if(browserName!=null) {
+            prop.setProperty("browser", browserName);
+        }
+
         driver = df.initDriver(prop);
+
 
         //Setup on LoginPage
         loginPage = new LoginPage(driver);
