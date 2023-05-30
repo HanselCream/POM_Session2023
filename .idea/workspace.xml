@@ -9,16 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3d65db7-649a-4876-a20b-bbda1712c9c2" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/listeners/ExtentReportListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/A70137.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/A70137.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/POM FILE" beforeDir="false" afterPath="$PROJECT_DIR$/POM FILE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/factory/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/factory/DriverFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testrunners/testng_chrome.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testrunners/testng_chrome.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testrunners/testng_master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testrunners/testng_master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testrunners/testng_regression.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testrunners/testng_regression.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/listeners/ExtentReportListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/listeners/ExtentReportListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +56,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\java-intellij\POM_Session2023\reports" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.qa.opencart.utils" />
     </key>
@@ -83,7 +79,9 @@
       <option name="USE_DEFAULT_REPORTERS" value="true" />
       <option name="PROPERTIES_FILE" value="" />
       <properties />
-      <listeners />
+      <listeners>
+        <listener class="com.qa.opencart.listeners.ExtentReportListener" />
+      </listeners>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685426194639</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <created>1685441021786</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685441021786</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

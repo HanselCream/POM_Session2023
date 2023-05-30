@@ -18,7 +18,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.qa.opencart.factory.DriverFactory;
 
 
-public class ExtentReportListener implements ITestListener { //POM_11: 49:00
+public class ExtentReportListener implements ITestListener {
 
     private static final String OUTPUT_FOLDER = "./reports/";
     private static final String FILE_NAME = "TestExecutionReport.html";
@@ -43,8 +43,8 @@ public class ExtentReportListener implements ITestListener { //POM_11: 49:00
 
         extentReports = new ExtentReports();
         ExtentSparkReporter reporter = new ExtentSparkReporter(OUTPUT_FOLDER + FILE_NAME);
-        reporter.config().setReportName("Open Cart Automation Test Results"); //TITLE REPORT
-        extentReports.attachReporter(reporter); //Below are Information
+        reporter.config().setReportName("Open Cart Automation Test Results");
+        extentReports.attachReporter(reporter);
         extentReports.setSystemInfo("System", "Windows 10");
         extentReports.setSystemInfo("Author", "Hans Wilhelm Radam");
         extentReports.setSystemInfo("Build#", "1.1");

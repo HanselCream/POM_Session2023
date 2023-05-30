@@ -154,11 +154,10 @@ public class DriverFactory {
      * take screenshot
      */
     public static String getScreenshot() { //POM_11 : 52:21 =>ExtentReport
-        File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.FILE));
-
+        File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         String path = System.getProperty("user.dir") + "/screenshot/" + System.currentTimeMillis() + ".png";
-
         File destination = new File(path);
+
         try {
             FileUtils.copyFile(srcFile, destination); // FileUtils should be coming from "org.apache.commons.io.FileUtils"
         } catch (IOException e) {
