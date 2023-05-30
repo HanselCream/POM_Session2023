@@ -1,11 +1,15 @@
 package com.qa.opencart.factory;
 
 import com.qa.opencart.frameworkexception.FrameException;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,6 +21,10 @@ public class DriverFactory {
     OptionsManager optionsManager;
     public static String highlightElement; //POM_10 32:13
 
+    /**
+     A ThreadLocal variable in Java allows each thread to have its own copy of a variable,
+     such as a driver instance, ensuring thread safety and isolation.
+     */
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>(); //POM_10 51:00
 
     public WebDriver initDriver(Properties prop) {
@@ -125,9 +133,9 @@ public class DriverFactory {
         }
         return prop;
     }
-}
 
-//*******************//
+
+//********initProperties********//
 //        Properties prop = new Properties();
 //        try {
 //            FileInputStream ip = new FileInputStream("./src/main/resources/config/config.properties");
@@ -141,3 +149,26 @@ public class DriverFactory {
 //        return prop;
 //    }
 //}
+
+    /**
+     * take screenshot
+     */
+    public static String getScreenshot() { //POM_11 : 52:21 =>ExtentReport
+        File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.FILE));
+
+        String path = System.getProperty("user.dir") + "/screenshot/" + System.currentTimeMillis() + ".png";
+
+        File destination = new File(path);
+        try {
+            FileUtils.copyFile(srcFile, destination); // FileUtils should be coming from "org.apache.commons.io.FileUtils"
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return path;
+    }
+
+
+}
+
+
+
