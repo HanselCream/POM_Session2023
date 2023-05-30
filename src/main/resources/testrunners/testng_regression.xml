@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="OpenCart Regression Suite" verbose= "1"
+<suite name="OpenCart Regression Suite" verbose= "3"
        thread-count="3" parallel="tests">
     <!--Verbose minimum value=4, maximum value 10 DETAILS
 Verbose is level of output or logging information displayed during test execution-->

@@ -77,7 +77,7 @@ public class DriverFactory {
         //C:\java-intellij\POM_Session2023
         //mvn clean install -Denv="qa"
         //mvn clean install -Denv="qa" -Dbrowser="chrome"
-        //mvn clean install -Denv="qa" -Dbrowser="chrome" -Dpassword="password"
+        //mvn clean install -Denv="qa" -Dbrowser="chrome" -Dpassword="password" =>LoginPageTest
 
 
         Properties prop = new Properties();

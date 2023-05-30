@@ -31,5 +31,12 @@ public class LoginPageTest extends BaseTest {
         Assert.assertEquals(accPage.getAccPageTitle(), AppConstants.ACCOUNTS_PAGE_TITLE_VALUE);
     }
 
+//    @Test //mvn clean install -Denv="qa" -Dbrowser="chrome" -Dpassword="password"
+//    public void loginTest() {
+//        accPage = loginPage.doLogin(prop.getProperty("username"), System.getProperty("password")); //Using this for mvn clean install -Denv="qa" -Dbrowser="chrome" -Dpassword="password"
+//        Assert.assertTrue(accPage.isLogoutLinkExist());
+//        Assert.assertEquals(accPage.getAccPageTitle(), AppConstants.ACCOUNTS_PAGE_TITLE_VALUE);
+//    }
+
 
 }
