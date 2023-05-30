@@ -8,7 +8,7 @@ import java.util.Properties;
 //POM_10_HeadLess_Incognito_OptionsManager_HighlightElement_ThreadLocal
 public class OptionsManager {
 
-    private Properties prop;
+    private final Properties prop;
     private ChromeOptions co;
     private FirefoxOptions fo;
     private EdgeOptions eo;

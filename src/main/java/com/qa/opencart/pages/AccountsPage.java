@@ -12,7 +12,7 @@ import java.util.List;
 public class AccountsPage {
 
     private final WebDriver driver;
-    private ElementUtility eleUtil;
+    private final ElementUtility eleUtil;
 
     //1. Constructor of the Page Class
     public AccountsPage(WebDriver driver) {

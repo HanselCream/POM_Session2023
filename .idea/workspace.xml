@@ -4,20 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c131eb6-ea2d-477d-a995-460ef035f750" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/ExcelUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/testdata/OpenCartTestData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/testrunners/testng_regression.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/testrunners/testng_sanity.xml" afterDir="false" />
+    <list default="true" id="b3d65db7-649a-4876-a20b-bbda1712c9c2" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/A70137.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/AppConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/ElementUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/opencart/tests/LoginPageNegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/opencart/tests/LoginPageNegativeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/opencart/tests/RegisterPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/opencart/tests/RegisterPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/factory/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/factory/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/factory/OptionsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/factory/OptionsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/AccountsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/AccountsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/ProductInformationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/ProductInformationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/ResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/pages/ResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/ElementUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/ElementUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/ExcelUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qa/opencart/utils/ExcelUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/testrunners/testng_regression.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testrunners/testng_regression.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2Q8vbPhxwFYaL6buH2T9jay2rMV" />
+  <component name="ProjectId" id="2QUZxJR6FUtfeKRhUB2rVvyT4Xy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,28 +42,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/java-intellij/POM_Session2023/src/main/resources",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.48505747",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\java-intellij\POM_Session2023\src\main\resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\java-intellij\POM_Session2023\src\test" />
-      <recent name="C:\java-intellij\POM_Session2023\src\main\resources\testdata" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qa.opencart.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/java-intellij/POM_Session2023/src/main/resources/testrunners/testng_regression.xml">
+  <component name="RunManager">
     <configuration name="C:/java-intellij/POM_Session2023/src/main/resources/testrunners/testng_regression.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM_Session" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/main/resources/testrunners/testng_regression.xml" />
@@ -77,114 +66,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginPageNegativeTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM_Session" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qa.opencart.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qa.opencart.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.qa.opencart.tests.LoginPageNegativeTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM_Session" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qa.opencart.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qa.opencart.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.qa.opencart.tests.RegisterPageTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterPageTest.userRegistrationTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM_Session" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qa.opencart.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qa.opencart.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.qa.opencart.tests.RegisterPageTest" />
-      <option name="METHOD_NAME" value="userRegistrationTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM_Session" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qa.opencart.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qa.opencart.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.qa.opencart.tests.SearchTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/java-intellij/POM_Session2023/src/main/resources/testrunners/testng_regression.xml" />
-        <item itemvalue="TestNG.LoginPageNegativeTest" />
-        <item itemvalue="TestNG.RegisterPageTest" />
-        <item itemvalue="TestNG.RegisterPageTest.userRegistrationTest" />
-        <item itemvalue="TestNG.SearchTest" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c131eb6-ea2d-477d-a995-460ef035f750" name="Changes" comment="" />
-      <created>1684748094990</created>
+      <changelist id="b3d65db7-649a-4876-a20b-bbda1712c9c2" name="Changes" comment="commit" />
+      <created>1685410373466</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684748094990</updated>
+      <updated>1685410373466</updated>
     </task>
     <task id="LOCAL-00001" summary="commit">
-      <created>1684829089620</created>
+      <created>1685411961741</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1684829089620</updated>
+      <updated>1685411961741</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />

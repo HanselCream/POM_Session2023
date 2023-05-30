@@ -74,10 +74,7 @@ public class LoginPage {
 
         String errorMessage = eleUtil.doGetElementText(loginErrorMessage);
         System.out.println(errorMessage);
-        if (errorMessage.contains(AppConstants.LOGIN_ERROR_MESSAGE)) {
-            return true;
-        }
-        return false;
+        return errorMessage.contains(AppConstants.LOGIN_ERROR_MESSAGE);
     }
 
     public RegisterPage navigateToRegisterPage() {

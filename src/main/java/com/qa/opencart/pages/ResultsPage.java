@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 public class ResultsPage {
         private final WebDriver driver;
-        private ElementUtility eleUtil;
-        private By resultProducts = By.xpath("//div/div[contains(@class,'product-layout')]"); //THIS IS FIXED
+        private final ElementUtility eleUtil;
+        private final By resultProducts = By.xpath("//div/div[contains(@class,'product-layout')]"); //THIS IS FIXED
 
         //1. Constructor of the Page Class
         public ResultsPage(WebDriver driver) {

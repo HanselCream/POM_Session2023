@@ -16,12 +16,12 @@ it means it runs different testcases together for more fast execution-->
         </classes>
     </test> <!-- Test -->
 
-    <test name= "Register Page Test">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name= "com.qa.opencart.tests.RegisterPageTest"/>
-        </classes>
-    </test> <!-- Test -->
+<!--    <test name= "Register Page Test">-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name= "com.qa.opencart.tests.RegisterPageTest"/>-->
+<!--        </classes>-->
+<!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
 
 
 <!--    <test name="Account Page Test">-->

@@ -16,7 +16,7 @@ public class ElementUtility {
 
     //EncapsulationMethod
     final WebDriver driver;
-    private JavaScriptUtility jsUtil; //POM_10 34:19
+    private final JavaScriptUtility jsUtil; //POM_10 34:19
     final int DEFAULT_TIME_OUT = 5;
 
     //Constructor
@@ -236,7 +236,7 @@ public class ElementUtility {
             }
 
         }
-        if (flag == false) {
+        if (!flag) {
             System.out.println(dropDownValue + " is not present in the dropdown " + locator);
         }
         return flag;
@@ -253,7 +253,7 @@ public class ElementUtility {
                 break;
             }
         }
-        if (flag == false) {
+        if (!flag) {
             System.out.println(value + " is not present in the dropdown " + locator);
         }
         return flag;

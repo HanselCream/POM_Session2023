@@ -20,11 +20,16 @@ public class DriverFactory {
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>(); //POM_10 51:00
 
     public WebDriver initDriver(Properties prop) {
-        String browserName = prop.getProperty("browser"); //To call on config properties
-        System.out.println("Browser Name is : " + browserName);
+//        String browserName = prop.getProperty("browser"); //To call on config properties
+//        System.out.println("Browser Name is : " + browserName);
+
         optionsManager = new OptionsManager(prop); //from OptionManager => POM_10
 
         highlightElement = prop.getProperty("highlight"); //POM_10 32:13
+
+        //mvn clean install -Denv="qa" -Dbrowser="chrome"   =>POM_11 : 26:50
+        String browserName = System.getProperty("browser");  //I have Commented out 23 & 24 so that I can call this on my terminal
+        System.out.println("browser name is : " + browserName);
 
         switch (browserName.toLowerCase()) {
             case "chrome":
@@ -69,8 +74,11 @@ public class DriverFactory {
     public Properties initProperties() {
 
         //POM_9_ParallelTest_CrossBrowserParameters_MultiEnvironmentSetup => 36:00
+        //C:\java-intellij\POM_Session2023
         //mvn clean install -Denv="qa"
-        //mvn clean install
+        //mvn clean install -Denv="qa" -Dbrowser="chrome"
+        //mvn clean install -Denv="qa" -Dbrowser="chrome" -Dpassword="password"
+
 
         Properties prop = new Properties();
         FileInputStream ip = null;

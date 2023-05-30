@@ -23,7 +23,7 @@ public class ExcelUtil { //POM_8_ExcelUtil_POI_API_TESTRuNNER_testngXmlFiles_Par
 
         System.out.println("Reading the data from sheet: " + sheetName);
 
-        Object data[][] = null;
+        Object[][] data = null;
 
         try {
             FileInputStream ip = new FileInputStream(TEST_DATA_SHEET_PATH);
