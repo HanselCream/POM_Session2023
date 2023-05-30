@@ -26,13 +26,6 @@
         </classes>
     </test> <!-- Test -->
 
-    <test name= "Login Page Test_ie">
-        <parameter name="browser" value="ie"/>
-        <classes>
-            <class name= "com.qa.opencart.tests.LoginPageTest"/>
-        </classes>
-    </test> <!-- Test -->
-
 
 <!--    ACCOUNT PAGE   -->
 
@@ -52,13 +45,6 @@
 
     <test name="Account Page Test_edge">
         <parameter name="browser" value="edge"/>
-        <classes>
-            <class name= "com.qa.opencart.tests.AccountPageTest"/>
-        </classes>
-    </test> <!-- Test -->
-
-    <test name="Account Page Test_ie">
-        <parameter name="browser" value="ie"/>
         <classes>
             <class name= "com.qa.opencart.tests.AccountPageTest"/>
         </classes>

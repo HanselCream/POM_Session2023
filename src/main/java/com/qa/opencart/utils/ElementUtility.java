@@ -1,10 +1,13 @@
 package com.qa.opencart.utils;
 
+import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.frameworkexception.FrameException;
+import org.apache.logging.log4j.core.util.JsonUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 
+import java.sql.Driver;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +16,13 @@ public class ElementUtility {
 
     //EncapsulationMethod
     final WebDriver driver;
+    private JavaScriptUtility jsUtil; //POM_10 34:19
     final int DEFAULT_TIME_OUT = 5;
 
     //Constructor
     public ElementUtility(WebDriver driver) {
         this.driver = driver;
+        jsUtil = new JavaScriptUtility(this.driver); //POM_10 34:19
     }
 
     public void doSendKeys(By locator, String value) {
@@ -32,7 +37,12 @@ public class ElementUtility {
 
     //------LESSON 26----------//
     public WebElement getElement(By locator, int timeOut) {
-        return waitForElementVisible(locator, timeOut);
+        WebElement element = waitForElementVisible(locator, timeOut);
+        if (Boolean.parseBoolean(DriverFactory.highlightElement)) { // POM_10 38:35 => Connected to JavascriptUtility. This can be removed
+            jsUtil.flash(element); //This is good for client to see where is your driver
+        }
+        return element;
+        // This was before jsUtil is added "return waitForElementVisible(locator, timeOut);"
     }
 
     //------LESSON 7 & 9-----------//
@@ -48,6 +58,10 @@ public class ElementUtility {
             waitForElementVisible(locator, DEFAULT_TIME_OUT);
             element = driver.findElement(locator);
         }
+
+        if (Boolean.parseBoolean(DriverFactory.highlightElement)) { // POM_10 34:30 => Connected to JavascriptUtility. This can be removed
+            jsUtil.flash(element); //This is good for client to see where is your driver
+        } //
         return element;
     }
 
@@ -416,8 +430,17 @@ public class ElementUtility {
 
     public WebElement waitForElementPresenceBy(By locator, int timeOut) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
-        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        WebElement element =  wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 
+        if (Boolean.parseBoolean(DriverFactory.highlightElement)){ // POM_10 34:30 => Connected to JavascriptUtility. This can be removed
+            jsUtil.flash(element); //This is good for client to see where is your driver
+        }
+
+        return element;
+
+        //Before this was just
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
+        //return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     /**

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,35 +14,57 @@ import java.util.Properties;
 public class DriverFactory {
 
     WebDriver driver;
+    OptionsManager optionsManager;
+    public static String highlightElement; //POM_10 32:13
+
+    public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>(); //POM_10 51:00
 
     public WebDriver initDriver(Properties prop) {
         String browserName = prop.getProperty("browser"); //To call on config properties
-
         System.out.println("Browser Name is : " + browserName);
+        optionsManager = new OptionsManager(prop); //from OptionManager => POM_10
+
+        highlightElement = prop.getProperty("highlight"); //POM_10 32:13
 
         switch (browserName.toLowerCase()) {
             case "chrome":
-                driver = new ChromeDriver();
+                //driver = new ChromeDriver(optionsManager.getChromeOptions()); //Comment: Because we will be using ThreadLocalDriver => POM_10 53:40
+                tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
                 break;
             case "firefox":
-                driver = new FirefoxDriver();
+                //driver = new FirefoxDriver(optionsManager.getFirefoxOptions()); //Comment: Because we will be using ThreadLocalDriver => POM_10 53:40
+                tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
                 break;
             case "edge":
-                driver = new EdgeDriver();
+                //driver = new EdgeDriver(optionsManager.getEdgeOptions()); //Comment: Because we will be using ThreadLocalDriver => POM_10 53:40
+                tlDriver.set(new EdgeDriver(optionsManager.getEdgeOptions()));
                 break;
-            case "ie":
-                driver = new InternetExplorerDriver();
-                break;
+
             default:
                 System.out.println("please pass the right browser");
                 throw new FrameException("NOBROWSERFOUNDEXCEPTION");
         }
 
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
-        driver.get(prop.getProperty("url"));
-        return driver;
+        //This is a change from driver.manage(): POM_10: 59:20
+        getDriver().manage().deleteAllCookies();
+        getDriver().manage().window().maximize();
+        getDriver().get(prop.getProperty("url"));
+        return getDriver();
+
+
+        //Comment 4 Syntax, making it into ThreadLocal driver: POM_10: 59:20
+//        driver.manage().deleteAllCookies();
+//        driver.manage().window().maximize();
+//        driver.get(prop.getProperty("url"));
+//        return driver;
     }
+
+
+    //return the thread local copy of the driver
+    public synchronized static WebDriver getDriver() { //POM_10: synchronized, is not mandatory you can use or not, just for synchronization
+        return tlDriver.get(); //POM_10: Adding his so the driver knows where to getMethod
+    }
+
 
     public Properties initProperties() {
 
@@ -58,11 +79,11 @@ public class DriverFactory {
         System.out.println("Running test cases on env: " + envName);
 
         try {
-        if (envName == null) {
-            System.out.println("No Env is given .. hence running it on QA environment .. ");
-            ip = new FileInputStream("./src/main/resources/config/qa.config.properties");
+            if (envName == null) {
+                System.out.println("No Env is given .. hence running it on QA environment .. ");
+                ip = new FileInputStream("./src/main/resources/config/qa.config.properties");
 
-        } else {
+            } else {
                 switch (envName.toLowerCase().trim()) {
                     case "qa":
                         ip = new FileInputStream("./src/main/resources/config/qa.config.properties");
@@ -85,10 +106,9 @@ public class DriverFactory {
                         throw new FrameException("NOVALIDENVIRONEMENTGIVEN");
                 }
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-            catch(FileNotFoundException e){
-                e.printStackTrace();
-            }
         try {
             prop.load(ip);
 
@@ -96,10 +116,10 @@ public class DriverFactory {
             e.printStackTrace();
         }
         return prop;
-        }
+    }
 }
 
-        //*******************//
+//*******************//
 //        Properties prop = new Properties();
 //        try {
 //            FileInputStream ip = new FileInputStream("./src/main/resources/config/config.properties");
