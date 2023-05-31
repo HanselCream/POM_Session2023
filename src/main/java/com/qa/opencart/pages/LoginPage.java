@@ -2,12 +2,14 @@ package com.qa.opencart.pages;
 
 import com.qa.opencart.utils.AppConstants;
 import com.qa.opencart.utils.ElementUtility;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class LoginPage {
 
@@ -34,18 +36,22 @@ public class LoginPage {
 
 
     //3. Page Actions/Methods:
+    @Step("Getting Login Page Title") //POM_12 31:00
     public String getLoginPageTitle() {
         return eleUtil.WaitForTitleContainsAndCapture(AppConstants.LOGIN_PAGE_TITLE_VALUE, AppConstants.SHORT_DEFAULT_WAIT);
     }
 
+    @Step("Getting Login Page URL") //POM_12 31:00
     public String getLoginPageUrl() {
         return eleUtil.WaitForURLContainsAndCapture(AppConstants.LOGIN_PAGE_URL_FRACTION_VALUE, AppConstants.SHORT_DEFAULT_WAIT);
     }
 
+    @Step("Checking forgot PWD link exist on Login Page") //POM_12 31:00
     public boolean isForgotPwdLinkExist() {
         return eleUtil.checkElementIsDisplayed(forgottenPwdLink);
     }
 
+    @Step("Getting footer links") //POM_12 31:00
     public List<String> getFooterLinkList() {
         List<WebElement> footerLinksList = eleUtil.waitForElementsVisible(footersLinks, AppConstants.MEDIUM_DEFAULT_WAIT);
         List<String> footerTextList = new ArrayList<String>();
@@ -56,6 +62,7 @@ public class LoginPage {
         return footerTextList;
     }
 
+    @Step("login with username {0} and password {1}")
     public AccountsPage doLogin(String userName, String pwd) {
         System.out.println("Correct Credentials are : " + userName + " : " + pwd);
         eleUtil.waitForElementVisible(emailId, AppConstants.MEDIUM_DEFAULT_WAIT).sendKeys(userName);
@@ -65,6 +72,7 @@ public class LoginPage {
         return new AccountsPage(driver);
     }
 
+    @Step("login with wrong username {0} and password {1}")
     public boolean doLoginWithWrongCredentials(String userName, String pwd) {
         System.out.println("Wrong Credentials are : " + userName + pwd);
         eleUtil.waitForElementVisible(emailId, AppConstants.MEDIUM_DEFAULT_WAIT);

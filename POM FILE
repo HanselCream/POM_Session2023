@@ -117,3 +117,11 @@
 
 POM_11 LESSON
 https://docs.qameta.io/allure/
+
+1) You need to install Allure
+2) https://docs.qameta.io/allure/ > 2.1
+https://scoop.sh/
+- Open PowerShell
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+> irm get.scoop.sh | iex
+
