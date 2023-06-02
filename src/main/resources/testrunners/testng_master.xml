@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="OpenCart Regression Suite" verbose= "4"
+       thread-count="3" parallel="tests">
+    <!--Verbose minimum value=4, maximum value 10 DETAILS
+Verbose is level of output or logging information displayed during test execution-->
+
+    <!--thread-count =>
+it means it runs different testcases together for more fast execution-->
+
+<!--    LOGIN PAGE  -->
+    <test name= "Login Page Test_chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.LoginPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name= "Login Page Test_firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.LoginPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name= "Login Page Test_edge">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.LoginPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+
+<!--    ACCOUNT PAGE   -->
+
+    <test name="Account Page Test_chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.AccountPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Account Page Test_firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.AccountPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Account Page Test_edge">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name= "com.qa.opencart.tests.AccountPageTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->
